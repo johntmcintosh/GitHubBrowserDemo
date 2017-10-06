@@ -18,6 +18,13 @@
 		5BD84C091F871FEC00687046 /* DefaultServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C081F871FEC00687046 /* DefaultServerTests.swift */; };
 		5BD84C0B1F871FFA00687046 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C0A1F871FFA00687046 /* Server.swift */; };
 		5BD84C0D1F87279300687046 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C0C1F87279300687046 /* MockURLProtocol.swift */; };
+		5BD84C101F8729B200687046 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C0F1F8729B200687046 /* Endpoint.swift */; };
+		5BD84C121F872B3E00687046 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C111F872B3E00687046 /* EndpointTests.swift */; };
+		5BD84C141F872BB000687046 /* MockServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C131F872BB000687046 /* MockServer.swift */; };
+		5BD84C191F872C2000687046 /* GitHubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C181F872C2000687046 /* GitHubRepo.swift */; };
+		5BD84C1C1F872C7F00687046 /* GitHubRepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C1B1F872C7F00687046 /* GitHubRepoService.swift */; };
+		5BD84C1E1F872D5400687046 /* GitHubRepoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C1D1F872D5400687046 /* GitHubRepoServiceTests.swift */; };
+		5BD84C1F1F872DFC00687046 /* LocalServerTests in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84C0E1F87294600687046 /* LocalServerTests */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		5BD84C081F871FEC00687046 /* DefaultServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultServerTests.swift; sourceTree = "<group>"; };
 		5BD84C0A1F871FFA00687046 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		5BD84C0C1F87279300687046 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		5BD84C0E1F87294600687046 /* LocalServerTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LocalServerTests; sourceTree = "<group>"; };
+		5BD84C0F1F8729B200687046 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5BD84C111F872B3E00687046 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		5BD84C131F872BB000687046 /* MockServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServer.swift; sourceTree = "<group>"; };
+		5BD84C181F872C2000687046 /* GitHubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepo.swift; sourceTree = "<group>"; };
+		5BD84C1B1F872C7F00687046 /* GitHubRepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepoService.swift; sourceTree = "<group>"; };
+		5BD84C1D1F872D5400687046 /* GitHubRepoServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepoServiceTests.swift; sourceTree = "<group>"; };
 		66BDABFBDDB6ADC881E36278 /* Pods_GitHubBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6947E29035D523649CB7AED0 /* Pods-GitHubBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD1C576A98778AD795FAEB14 /* Pods-GitHubBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD84C041F871FBD00687046 /* Common */,
+				5BD84C151F872BE200687046 /* Modules */,
 				5BD84BE41F871EC100687046 /* AppDelegate.swift */,
 				5BD84BE61F871EC100687046 /* ViewController.swift */,
 				5BD84BE81F871EC100687046 /* Main.storyboard */,
@@ -118,8 +133,10 @@
 		5BD84BF81F871EC200687046 /* GitHubBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
+				5BD84C0E1F87294600687046 /* LocalServerTests */,
 				5BD84BFB1F871EC200687046 /* Info.plist */,
 				5BD84C0C1F87279300687046 /* MockURLProtocol.swift */,
+				5BD84C131F872BB000687046 /* MockServer.swift */,
 			);
 			path = GitHubBrowserTests;
 			sourceTree = "<group>";
@@ -135,11 +152,47 @@
 		5BD84C051F871FD000687046 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				5BD84C0F1F8729B200687046 /* Endpoint.swift */,
+				5BD84C111F872B3E00687046 /* EndpointTests.swift */,
 				5BD84C061F871FE300687046 /* DefaultServer.swift */,
 				5BD84C081F871FEC00687046 /* DefaultServerTests.swift */,
 				5BD84C0A1F871FFA00687046 /* Server.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5BD84C151F872BE200687046 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5BD84C161F872BF100687046 /* Repos */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5BD84C161F872BF100687046 /* Repos */ = {
+			isa = PBXGroup;
+			children = (
+				5BD84C1A1F872C5500687046 /* Service */,
+				5BD84C171F872C0100687046 /* Model */,
+			);
+			path = Repos;
+			sourceTree = "<group>";
+		};
+		5BD84C171F872C0100687046 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BD84C181F872C2000687046 /* GitHubRepo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BD84C1A1F872C5500687046 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5BD84C1B1F872C7F00687046 /* GitHubRepoService.swift */,
+				5BD84C1D1F872D5400687046 /* GitHubRepoServiceTests.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		673B18054D494AFF268CBF23 /* Pods */ = {
@@ -252,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD84C1F1F872DFC00687046 /* LocalServerTests in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +423,10 @@
 				5BD84C071F871FE300687046 /* DefaultServer.swift in Sources */,
 				5BD84BE71F871EC100687046 /* ViewController.swift in Sources */,
 				5BD84C0B1F871FFA00687046 /* Server.swift in Sources */,
+				5BD84C191F872C2000687046 /* GitHubRepo.swift in Sources */,
 				5BD84BE51F871EC100687046 /* AppDelegate.swift in Sources */,
+				5BD84C1C1F872C7F00687046 /* GitHubRepoService.swift in Sources */,
+				5BD84C101F8729B200687046 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +434,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD84C141F872BB000687046 /* MockServer.swift in Sources */,
 				5BD84C091F871FEC00687046 /* DefaultServerTests.swift in Sources */,
+				5BD84C121F872B3E00687046 /* EndpointTests.swift in Sources */,
+				5BD84C1E1F872D5400687046 /* GitHubRepoServiceTests.swift in Sources */,
 				5BD84C0D1F87279300687046 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
