@@ -14,7 +14,10 @@
 		5BD84BEA1F871EC100687046 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84BE81F871EC100687046 /* Main.storyboard */; };
 		5BD84BEC1F871EC100687046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84BEB1F871EC100687046 /* Assets.xcassets */; };
 		5BD84BEF1F871EC100687046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84BED1F871EC100687046 /* LaunchScreen.storyboard */; };
-		5BD84BFA1F871EC200687046 /* GitHubBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84BF91F871EC200687046 /* GitHubBrowserTests.swift */; };
+		5BD84C071F871FE300687046 /* DefaultServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C061F871FE300687046 /* DefaultServer.swift */; };
+		5BD84C091F871FEC00687046 /* DefaultServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C081F871FEC00687046 /* DefaultServerTests.swift */; };
+		5BD84C0B1F871FFA00687046 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C0A1F871FFA00687046 /* Server.swift */; };
+		5BD84C0D1F87279300687046 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C0C1F87279300687046 /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,11 @@
 		5BD84BEE1F871EC100687046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BD84BF01F871EC100687046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BD84BF51F871EC200687046 /* GitHubBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BD84BF91F871EC200687046 /* GitHubBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubBrowserTests.swift; sourceTree = "<group>"; };
 		5BD84BFB1F871EC200687046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BD84C061F871FE300687046 /* DefaultServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultServer.swift; sourceTree = "<group>"; };
+		5BD84C081F871FEC00687046 /* DefaultServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultServerTests.swift; sourceTree = "<group>"; };
+		5BD84C0A1F871FFA00687046 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		5BD84C0C1F87279300687046 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		66BDABFBDDB6ADC881E36278 /* Pods_GitHubBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6947E29035D523649CB7AED0 /* Pods-GitHubBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD1C576A98778AD795FAEB14 /* Pods-GitHubBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 		5BD84BE31F871EC100687046 /* GitHubBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				5BD84C041F871FBD00687046 /* Common */,
 				5BD84BE41F871EC100687046 /* AppDelegate.swift */,
 				5BD84BE61F871EC100687046 /* ViewController.swift */,
 				5BD84BE81F871EC100687046 /* Main.storyboard */,
@@ -111,10 +118,28 @@
 		5BD84BF81F871EC200687046 /* GitHubBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				5BD84BF91F871EC200687046 /* GitHubBrowserTests.swift */,
 				5BD84BFB1F871EC200687046 /* Info.plist */,
+				5BD84C0C1F87279300687046 /* MockURLProtocol.swift */,
 			);
 			path = GitHubBrowserTests;
+			sourceTree = "<group>";
+		};
+		5BD84C041F871FBD00687046 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5BD84C051F871FD000687046 /* Network */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5BD84C051F871FD000687046 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5BD84C061F871FE300687046 /* DefaultServer.swift */,
+				5BD84C081F871FEC00687046 /* DefaultServerTests.swift */,
+				5BD84C0A1F871FFA00687046 /* Server.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		673B18054D494AFF268CBF23 /* Pods */ = {
@@ -341,7 +366,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD84C071F871FE300687046 /* DefaultServer.swift in Sources */,
 				5BD84BE71F871EC100687046 /* ViewController.swift in Sources */,
+				5BD84C0B1F871FFA00687046 /* Server.swift in Sources */,
 				5BD84BE51F871EC100687046 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BD84BFA1F871EC200687046 /* GitHubBrowserTests.swift in Sources */,
+				5BD84C091F871FEC00687046 /* DefaultServerTests.swift in Sources */,
+				5BD84C0D1F87279300687046 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
