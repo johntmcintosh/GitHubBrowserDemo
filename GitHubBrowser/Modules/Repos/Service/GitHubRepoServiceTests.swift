@@ -37,8 +37,7 @@ class GitHubRepoServiceTests: XCTestCase {
         let expectation = self.expectation(description: "Completion expectation")
         service.fetchPublicRepos(for: "square") { result in
             let repos = try! result.dematerialize()
-            // TODO: zero is only correct until parsing is implemented
-            XCTAssertEqual(repos.count, 0)
+            XCTAssertEqual(repos.count, 30)
             expectation.fulfill()
         }
         waitForExpectations(timeout: 1.0)

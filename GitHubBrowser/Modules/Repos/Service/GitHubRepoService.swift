@@ -18,12 +18,13 @@ class GitHubRepoService {
         self.server = server
     }
     
+    // TODO: Limit response to 20 repos
     func fetchPublicRepos(for organization: String, completion: @escaping (Result<[GitHubRepo], ServerError>) -> ()) {
         server.get(to: Endpoint.Orgs(organization).repos, parameters: nil) { result in
             switch result {
             case .success(let response):
-                // TODO: Implement response parsing
-                completion(.success([]))
+                let repos = response.json.arrayValueForType(GitHubRepo.self) ?? []
+                completion(.success(repos))
             case .failure(let error):
                 completion(.failure(error))
             }
