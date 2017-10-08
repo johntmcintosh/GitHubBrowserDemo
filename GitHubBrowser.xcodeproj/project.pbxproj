@@ -29,6 +29,8 @@
 		5BD84C251F872EE400687046 /* JSONInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C241F872EE400687046 /* JSONInstantiable.swift */; };
 		5BD84C271F87301800687046 /* GitHubRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C261F87301800687046 /* GitHubRepoTests.swift */; };
 		5BD84C291F87314700687046 /* XCTestCase+GHB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C281F87314700687046 /* XCTestCase+GHB.swift */; };
+		5BDA45911F8AB71800DDDB7A /* NSArray+GHB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA45901F8AB71800DDDB7A /* NSArray+GHB.swift */; };
+		5BDA45931F8AB74700DDDB7A /* NSArray+GHBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA45921F8AB74700DDDB7A /* NSArray+GHBTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		5BD84C241F872EE400687046 /* JSONInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONInstantiable.swift; sourceTree = "<group>"; };
 		5BD84C261F87301800687046 /* GitHubRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepoTests.swift; sourceTree = "<group>"; };
 		5BD84C281F87314700687046 /* XCTestCase+GHB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+GHB.swift"; sourceTree = "<group>"; };
+		5BDA45901F8AB71800DDDB7A /* NSArray+GHB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSArray+GHB.swift"; sourceTree = "<group>"; };
+		5BDA45921F8AB74700DDDB7A /* NSArray+GHBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSArray+GHBTests.swift"; sourceTree = "<group>"; };
 		66BDABFBDDB6ADC881E36278 /* Pods_GitHubBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6947E29035D523649CB7AED0 /* Pods-GitHubBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD1C576A98778AD795FAEB14 /* Pods-GitHubBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				5BD84C211F872EB000687046 /* SwiftyJSON+GHB.swift */,
+				5BDA45901F8AB71800DDDB7A /* NSArray+GHB.swift */,
+				5BDA45921F8AB74700DDDB7A /* NSArray+GHBTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -454,6 +460,7 @@
 				5BD84C251F872EE400687046 /* JSONInstantiable.swift in Sources */,
 				5BD84C221F872EB000687046 /* SwiftyJSON+GHB.swift in Sources */,
 				5BD84C191F872C2000687046 /* GitHubRepo.swift in Sources */,
+				5BDA45911F8AB71800DDDB7A /* NSArray+GHB.swift in Sources */,
 				5BD84BE51F871EC100687046 /* AppDelegate.swift in Sources */,
 				5BD84C1C1F872C7F00687046 /* GitHubRepoService.swift in Sources */,
 				5BD84C101F8729B200687046 /* Endpoint.swift in Sources */,
@@ -464,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDA45931F8AB74700DDDB7A /* NSArray+GHBTests.swift in Sources */,
 				5BD84C271F87301800687046 /* GitHubRepoTests.swift in Sources */,
 				5BD84C141F872BB000687046 /* MockServer.swift in Sources */,
 				5BD84C291F87314700687046 /* XCTestCase+GHB.swift in Sources */,

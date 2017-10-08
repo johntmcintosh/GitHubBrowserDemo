@@ -24,8 +24,9 @@ class GitHubRepoServiceTests: XCTestCase {
     
     func testFetchRepos_request() {
         let expectation = self.expectation(description: "Completion expectation")
-        service.fetchPublicRepos(for: "square") { result in
+        service.fetchPublicRepos(for: "square", type: .all) { result in
             self.server.assertLastRequestEquals(Endpoint.Orgs("square").repos)
+            self.server.assertLastRequestParameterEqual("type", "all")
             expectation.fulfill()
         }
         waitForExpectations(timeout: 1.0)
@@ -35,9 +36,21 @@ class GitHubRepoServiceTests: XCTestCase {
         server.queueNextResponse(localTestFile: "orgs.square.repos...success.json")
         
         let expectation = self.expectation(description: "Completion expectation")
-        service.fetchPublicRepos(for: "square") { result in
+        service.fetchPublicRepos(for: "square", type: .all) { result in
             let repos = try! result.dematerialize()
             XCTAssertEqual(repos.count, 30)
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1.0)
+    }
+    
+    func testFetchRepos_responseSuccess_sizeLimited() {
+        server.queueNextResponse(localTestFile: "orgs.square.repos...success.json")
+        
+        let expectation = self.expectation(description: "Completion expectation")
+        service.fetchPublicRepos(for: "square", type: .all, limit: 10) { result in
+            let repos = try! result.dematerialize()
+            XCTAssertEqual(repos.count, 10)
             expectation.fulfill()
         }
         waitForExpectations(timeout: 1.0)
@@ -47,7 +60,7 @@ class GitHubRepoServiceTests: XCTestCase {
         server.nextResponse = .failure(ServerError("error message"))
         
         let expectation = self.expectation(description: "Completion expectation")
-        service.fetchPublicRepos(for: "square") { result in
+        service.fetchPublicRepos(for: "square", type: .all) { result in
             let error = result.error!
             XCTAssertEqual(error.message, "error message")
             expectation.fulfill()

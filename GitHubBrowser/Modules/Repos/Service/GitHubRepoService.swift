@@ -18,12 +18,22 @@ class GitHubRepoService {
         self.server = server
     }
     
-    // TODO: Limit response to 20 repos
-    func fetchPublicRepos(for organization: String, completion: @escaping (Result<[GitHubRepo], ServerError>) -> ()) {
-        server.get(to: Endpoint.Orgs(organization).repos, parameters: nil) { result in
+    enum RepoType: String {
+        case all = "all"
+        case publicType = "public"
+        case privateType = "private"
+        case fork = "forks"
+        case sources = "sources"
+        case member = "member"
+    }
+    
+    func fetchPublicRepos(for organization: String, type: RepoType = .all, limit: Int? = nil, completion: @escaping (Result<[GitHubRepo], ServerError>) -> ()) {
+        let typeParameter = URLQueryItem(name: "type", value: type.rawValue)
+        server.get(to: Endpoint.Orgs(organization).repos, parameters: [typeParameter]) { result in
             switch result {
             case .success(let response):
-                let repos = response.json.arrayValueForType(GitHubRepo.self) ?? []
+                let parsedRepos = response.json.arrayValueForType(GitHubRepo.self) ?? []
+                let repos = parsedRepos.lengthLimited(to: limit)
                 completion(.success(repos))
             case .failure(let error):
                 completion(.failure(error))
