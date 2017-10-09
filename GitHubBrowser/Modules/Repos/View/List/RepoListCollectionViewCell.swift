@@ -14,6 +14,8 @@ import UIKit
 // However, for simplicity in this demo app, I'm implementing it directly in the UICollectionViewCell subclass.
 class RepoListCollectionViewCell: UICollectionViewCell {
     
+    static let nibName = "RepoListCollectionViewCell"
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
 }

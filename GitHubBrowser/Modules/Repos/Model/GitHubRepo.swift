@@ -15,6 +15,7 @@ struct GitHubRepo {
     
     var name: String
     var createdDate: Date
+    var stargazersCount: Int
 }
 
 
@@ -31,5 +32,8 @@ extension GitHubRepo: JSONInstantiable {
         
         guard let createdDate = json["created_at"].dateFromISO8601Sting else { return nil }
         self.createdDate = createdDate
+        
+        guard let stargazersCount = json["stargazers_count"].int else { return nil }
+        self.stargazersCount = stargazersCount
     }
 }
