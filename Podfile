@@ -10,6 +10,9 @@ target 'GitHubBrowser' do
     
     target 'GitHubBrowserTests' do
         inherit! :search_paths
+        
+        # This is a pod I'm developing on top of FBSnapshotTestCase that's not quite ready for public release yet.
+        pod 'SnapshotKit', :git => 'git@github.com:johntmcintosh/SnapshotKit.git', :branch => 'master'
     end
 end
 

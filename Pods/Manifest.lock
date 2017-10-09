@@ -1,15 +1,35 @@
 PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
   - Result (3.2.4)
+  - SnapshotKit (0.0.1):
+    - FBSnapshotTestCase (~> 2.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Result (= 3.2.4)
+  - SnapshotKit (from `git@github.com:johntmcintosh/SnapshotKit.git`, branch `master`)
   - SwiftyJSON (= 3.1.4)
 
+EXTERNAL SOURCES:
+  SnapshotKit:
+    :branch: master
+    :git: git@github.com:johntmcintosh/SnapshotKit.git
+
+CHECKOUT OPTIONS:
+  SnapshotKit:
+    :commit: d07cf81bb452bebd5f5ac186aab7dbf02f06c1f6
+    :git: git@github.com:johntmcintosh/SnapshotKit.git
+
 SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  SnapshotKit: 5e5ee8fd6d3d44df13495db52028c781818d1b7e
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 687dca80a960bd83726360b2da10eb0c8ebd1911
+PODFILE CHECKSUM: 0ed762b13bf6943e5de4d48842cf49948edf2d80
 
 COCOAPODS: 1.3.1
