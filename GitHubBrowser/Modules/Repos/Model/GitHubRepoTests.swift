@@ -25,6 +25,6 @@ class GitHubRepoTests: XCTestCase {
         XCTAssertEqual(repo.createdDate, dateFormatter.date(from: "2009-06-18T23:22:44Z"))
         XCTAssertEqual(repo.updatedDate, dateFormatter.date(from: "2016-04-30T14:29:45Z"))
         XCTAssertEqual(repo.stargazersCount, 8)
-        XCTAssertEqual(repo.watchersCount, 7)
+        XCTAssertEqual(repo.forksCount, 3)
     }
 }

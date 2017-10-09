@@ -13,11 +13,11 @@
             <connections>
                 <outlet property="createdLabel" destination="dzN-9v-TJs" id="UI3-94-OMX"/>
                 <outlet property="descriptionLabel" destination="VjZ-tu-EEB" id="iWJ-o4-1O8"/>
+                <outlet property="forksLabel" destination="pYT-21-NCv" id="suf-lX-yYS"/>
                 <outlet property="stargazersLabel" destination="716-K7-4Nf" id="iRS-dS-imW"/>
                 <outlet property="titleLabel" destination="CJx-fC-d5m" id="0kk-Qd-hMj"/>
                 <outlet property="updatedLabel" destination="LiU-vE-ROS" id="4gk-Vy-x5D"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Jed-XO-jOF"/>
-                <outlet property="watchersLabel" destination="pYT-21-NCv" id="t8V-bV-ZJo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -37,7 +37,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3BN-TH-Hgp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="watchers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYT-21-NCv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="forks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYT-21-NCv">
                                                     <rect key="frame" x="0.0" y="0.0" width="187.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

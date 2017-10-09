@@ -19,7 +19,7 @@ struct GitHubRepo {
     var createdDate: Date
     var updatedDate: Date
     var stargazersCount: Int
-    var watchersCount: Int
+    var forksCount: Int
 }
 
 
@@ -49,7 +49,7 @@ extension GitHubRepo: JSONInstantiable {
         guard let stargazersCount = json["stargazers_count"].int else { return nil }
         self.stargazersCount = stargazersCount
 
-        guard let watchersCount = json["watchers_count"].int else { return nil }
-        self.watchersCount = watchersCount
+        guard let forksCount = json["forks_count"].int else { return nil }
+        self.forksCount = forksCount
     }
 }

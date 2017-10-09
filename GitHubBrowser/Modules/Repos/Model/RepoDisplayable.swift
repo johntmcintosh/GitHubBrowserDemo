@@ -17,5 +17,5 @@ protocol RepoDisplayable {
     var createdDate: Date { get }
     var updatedDate: Date { get }
     var stargazersCount: Int { get }
-    var watchersCount: Int { get }
+    var forksCount: Int { get }
 }

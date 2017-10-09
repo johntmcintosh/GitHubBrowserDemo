@@ -51,7 +51,7 @@ private class MockRepo: RepoDisplayable {
         return 120
     }
     
-    var watchersCount: Int {
+    var forksCount: Int {
         return 18
     }
 }

@@ -13,9 +13,9 @@ class RepoDetailViewController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var watchersLabel: UILabel! {
+    @IBOutlet weak var forksLabel: UILabel! {
         didSet {
-            watchersLabel.text = watchersFormatter.string(for: repo.watchersCount)
+            forksLabel.text = forksFormatter.string(for: repo.forksCount)
         }
     }
     
@@ -57,8 +57,8 @@ class RepoDetailViewController: UIViewController {
     let repo: RepoDisplayable
     let viewConfig: ViewConfig
     
-    private lazy var watchersFormatter: RepoCountFormatter = {
-        return RepoCountFormatter(legend: "👀", viewConfig: self.viewConfig)
+    private lazy var forksFormatter: RepoCountFormatter = {
+        return RepoCountFormatter(legend: "🍴", viewConfig: self.viewConfig)
     }()
     
     private lazy var stargazersFormatter: RepoCountFormatter = {
