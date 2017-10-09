@@ -18,4 +18,24 @@ class RepoListCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
+    
+    var highlightedColor: UIColor {
+        return UIColor(white: 0.95, alpha: 1.0)
+    }
+    
+    var defaultColor: UIColor {
+        return .white
+    }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            backgroundColor = (isHighlighted) ? highlightedColor : defaultColor
+        }
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            backgroundColor = (isSelected) ? highlightedColor : defaultColor
+        }
+    }
 }

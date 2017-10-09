@@ -10,7 +10,23 @@ import Foundation
 import Result
 
 
-class GitHubRepoService {
+enum RepoType: String {
+    case all = "all"
+    case publicType = "public"
+    case privateType = "private"
+    case fork = "forks"
+    case sources = "sources"
+    case member = "member"
+}
+
+
+protocol GitHubRepoServicing {
+    
+    func fetchPublicRepos(for organization: String, type: RepoType, limit: Int?, completion: @escaping (Result<[RepoDisplayable], ServerError>) -> ())
+}
+
+
+class GitHubRepoService: GitHubRepoServicing {
     
     let server: Server
     
@@ -18,16 +34,7 @@ class GitHubRepoService {
         self.server = server
     }
     
-    enum RepoType: String {
-        case all = "all"
-        case publicType = "public"
-        case privateType = "private"
-        case fork = "forks"
-        case sources = "sources"
-        case member = "member"
-    }
-    
-    func fetchPublicRepos(for organization: String, type: RepoType = .all, limit: Int? = nil, completion: @escaping (Result<[GitHubRepo], ServerError>) -> ()) {
+    func fetchPublicRepos(for organization: String, type: RepoType = .all, limit: Int? = nil, completion: @escaping (Result<[RepoDisplayable], ServerError>) -> ()) {
         let typeParameter = URLQueryItem(name: "type", value: type.rawValue)
         server.get(to: Endpoint.Orgs(organization).repos, parameters: [typeParameter]) { result in
             switch result {

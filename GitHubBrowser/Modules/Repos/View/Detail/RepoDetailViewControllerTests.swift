@@ -23,35 +23,3 @@ class RepoDetailViewControllerTests: SnapshotKitTestCase {
         snapshot.fixed(size: iPhoneDeviceSize.iPhone6.resolution).verify(vc)
     }
 }
-
-
-private class MockRepo: RepoDisplayable {
-    
-    var name: String {
-        return "repo"
-    }
-    
-    var fullName: String {
-        return "sample/repo"
-    }
-    
-    var description: String? {
-        return "In egestas nulla non tortor ultricies molestie. Etiam ante quam, efficitur a commodo sed, convallis eu nunc. Curabitur aliquam, nisl et sagittis pellentesque, magna lacus porta justo, eget dictum lectus ex eu dui."
-    }
-    
-    var createdDate: Date {
-        return Date(timeIntervalSince1970: 0)
-    }
-    
-    var updatedDate: Date {
-        return Date(timeIntervalSince1970: 0)
-    }
-    
-    var stargazersCount: Int {
-        return 120
-    }
-    
-    var forksCount: Int {
-        return 18
-    }
-}
