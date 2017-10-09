@@ -14,8 +14,11 @@ import SwiftyJSON
 struct GitHubRepo {
     
     var name: String
+    var fullName: String
+    var description: String?
     var createdDate: Date
     var stargazersCount: Int
+    var watchersCount: Int
 }
 
 
@@ -29,11 +32,20 @@ extension GitHubRepo: JSONInstantiable {
     init?(json: JSON) {
         guard let name = json["name"].string else { return nil }
         self.name = name
-        
+
+        guard let fullName = json["full_name"].string else { return nil }
+        self.fullName = fullName
+
+        let description = json["description"].string
+        self.description = description
+
         guard let createdDate = json["created_at"].dateFromISO8601Sting else { return nil }
         self.createdDate = createdDate
         
         guard let stargazersCount = json["stargazers_count"].int else { return nil }
         self.stargazersCount = stargazersCount
+
+        guard let watchersCount = json["watchers_count"].int else { return nil }
+        self.watchersCount = watchersCount
     }
 }

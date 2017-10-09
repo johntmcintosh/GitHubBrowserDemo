@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		3251AFB7A7CA6511BB6A98E2 /* Pods_GitHubBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BDABFBDDB6ADC881E36278 /* Pods_GitHubBrowserTests.framework */; };
 		438B87A589F704AC93291B24 /* Pods_GitHubBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D8D3ED9C5946E6449C3A14 /* Pods_GitHubBrowser.framework */; };
-		5B7448F51F8B1EF200938143 /* StargazerCountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7448F41F8B1EF200938143 /* StargazerCountFormatter.swift */; };
-		5B7448F71F8B204700938143 /* StargazerCountFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7448F61F8B204700938143 /* StargazerCountFormatterTests.swift */; };
+		5B4E44A21F8B221F00953F91 /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E44A11F8B221F00953F91 /* RepoDetailViewController.swift */; };
+		5B4E44A41F8B222D00953F91 /* RepoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E44A31F8B222D00953F91 /* RepoDetailViewController.xib */; };
+		5B4E44A61F8B225700953F91 /* RepoDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E44A51F8B225700953F91 /* RepoDetailViewControllerTests.swift */; };
+		5B7448F51F8B1EF200938143 /* RepoCountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7448F41F8B1EF200938143 /* RepoCountFormatter.swift */; };
+		5B7448F71F8B204700938143 /* RepoCountFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7448F61F8B204700938143 /* RepoCountFormatterTests.swift */; };
 		5BD84BE51F871EC100687046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84BE41F871EC100687046 /* AppDelegate.swift */; };
 		5BD84BE71F871EC100687046 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84BE61F871EC100687046 /* ViewController.swift */; };
 		5BD84BEA1F871EC100687046 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84BE81F871EC100687046 /* Main.storyboard */; };
@@ -59,8 +62,11 @@
 /* Begin PBXFileReference section */
 		1A7099D33D707BF333E2C464 /* Pods-GitHubBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser.release.xcconfig"; sourceTree = "<group>"; };
 		31D8D3ED9C5946E6449C3A14 /* Pods_GitHubBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B7448F41F8B1EF200938143 /* StargazerCountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerCountFormatter.swift; sourceTree = "<group>"; };
-		5B7448F61F8B204700938143 /* StargazerCountFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerCountFormatterTests.swift; sourceTree = "<group>"; };
+		5B4E44A11F8B221F00953F91 /* RepoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
+		5B4E44A31F8B222D00953F91 /* RepoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoDetailViewController.xib; sourceTree = "<group>"; };
+		5B4E44A51F8B225700953F91 /* RepoDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		5B7448F41F8B1EF200938143 /* RepoCountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCountFormatter.swift; sourceTree = "<group>"; };
+		5B7448F61F8B204700938143 /* RepoCountFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCountFormatterTests.swift; sourceTree = "<group>"; };
 		5B88A109EF40A475E7404FC3 /* Pods-GitHubBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		5BD84BE11F871EC100687046 /* GitHubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD84BE41F871EC100687046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,11 +139,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B4E44A01F8B21E700953F91 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5B4E44A11F8B221F00953F91 /* RepoDetailViewController.swift */,
+				5B4E44A31F8B222D00953F91 /* RepoDetailViewController.xib */,
+				5B4E44A51F8B225700953F91 /* RepoDetailViewControllerTests.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		5B7448F31F8B1EE400938143 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				5B7448F41F8B1EF200938143 /* StargazerCountFormatter.swift */,
-				5B7448F61F8B204700938143 /* StargazerCountFormatterTests.swift */,
+				5B7448F41F8B1EF200938143 /* RepoCountFormatter.swift */,
+				5B7448F61F8B204700938143 /* RepoCountFormatterTests.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -273,6 +289,7 @@
 			children = (
 				5B7448F31F8B1EE400938143 /* Common */,
 				5BDA45951F8ABC1200DDDB7A /* List */,
+				5B4E44A01F8B21E700953F91 /* Detail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -401,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD84BEF1F871EC100687046 /* LaunchScreen.storyboard in Resources */,
+				5B4E44A41F8B222D00953F91 /* RepoDetailViewController.xib in Resources */,
 				5BD84BEC1F871EC100687046 /* Assets.xcassets in Resources */,
 				5BDA45A11F8ABE7B00DDDB7A /* RepoListCollectionViewCell.xib in Resources */,
 				5BDA45991F8ABC6000DDDB7A /* RepoListViewController.xib in Resources */,
@@ -543,10 +561,11 @@
 				5BDA45971F8ABC1F00DDDB7A /* RepoListViewController.swift in Sources */,
 				5BD84C191F872C2000687046 /* GitHubRepo.swift in Sources */,
 				5BDA459D1F8ABD7D00DDDB7A /* GitHubRepo+RepoDisplayable.swift in Sources */,
+				5B4E44A21F8B221F00953F91 /* RepoDetailViewController.swift in Sources */,
 				5BDA45AC1F8B1AB800DDDB7A /* CellSeparatorLayoutAttributes.swift in Sources */,
 				5BDA45911F8AB71800DDDB7A /* NSArray+GHB.swift in Sources */,
 				5BDA45AA1F8B169900DDDB7A /* CollectionViewCellSeparator.swift in Sources */,
-				5B7448F51F8B1EF200938143 /* StargazerCountFormatter.swift in Sources */,
+				5B7448F51F8B1EF200938143 /* RepoCountFormatter.swift in Sources */,
 				5BD84BE51F871EC100687046 /* AppDelegate.swift in Sources */,
 				5BD84C1C1F872C7F00687046 /* GitHubRepoService.swift in Sources */,
 				5BD84C101F8729B200687046 /* Endpoint.swift in Sources */,
@@ -558,7 +577,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BDA45931F8AB74700DDDB7A /* NSArray+GHBTests.swift in Sources */,
-				5B7448F71F8B204700938143 /* StargazerCountFormatterTests.swift in Sources */,
+				5B4E44A61F8B225700953F91 /* RepoDetailViewControllerTests.swift in Sources */,
+				5B7448F71F8B204700938143 /* RepoCountFormatterTests.swift in Sources */,
 				5BDA45A31F8B0DD900DDDB7A /* RepoListCollectionViewCellTests.swift in Sources */,
 				5BD84C271F87301800687046 /* GitHubRepoTests.swift in Sources */,
 				5BD84C141F872BB000687046 /* MockServer.swift in Sources */,

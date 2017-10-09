@@ -12,7 +12,7 @@ import UIKit
 class RepoListViewController: UIViewController {
     
     private static let repoCellIdentifier = "RepoListCell"
-    private let stargazerFormatter = StargazerCountFormatter()
+    private let stargazerFormatter = RepoCountFormatter(legend: "★")
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -44,7 +44,7 @@ extension RepoListViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RepoListViewController.repoCellIdentifier, for: indexPath) as! RepoListCollectionViewCell
         
         let repo = repos[indexPath.row]
-        cell.titleLabel.text = repo.name
+        cell.titleLabel.text = repo.fullName
         cell.detailLabel.text = stargazerFormatter.string(for: repo.stargazersCount)
         
         return cell

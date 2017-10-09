@@ -20,6 +20,10 @@ class GitHubRepoTests: XCTestCase {
         let dateFormatter = ISO8601DateFormatter()
         
         XCTAssertEqual(repo.name, "html5")
+        XCTAssertEqual(repo.fullName, "square/html5")
+        XCTAssertEqual(repo.description, "A Rails plugin for playing around with HTML5.")
         XCTAssertEqual(repo.createdDate, dateFormatter.date(from: "2009-06-18T23:22:44Z"))
+        XCTAssertEqual(repo.stargazersCount, 8)
+        XCTAssertEqual(repo.watchersCount, 7)
     }
 }

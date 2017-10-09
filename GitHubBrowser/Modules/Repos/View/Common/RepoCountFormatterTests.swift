@@ -1,5 +1,5 @@
 //
-//  StargazerCountFormatterTests.swift
+//  RepoCountFormatterTests.swift
 //  GitHubBrowserTests
 //
 //  Created by John McIntosh on 10/8/17.
@@ -10,9 +10,9 @@
 import XCTest
 
 
-class StargazerCountFormatterTests: XCTestCase {
+class RepoCountFormatterTests: XCTestCase {
     
-    let formatter = StargazerCountFormatter()
+    let formatter = RepoCountFormatter(legend: "★")
     
     func testZero() {
         let string = formatter.string(for: 0)
