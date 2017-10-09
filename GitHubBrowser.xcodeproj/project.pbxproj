@@ -31,6 +31,9 @@
 		5BD84C291F87314700687046 /* XCTestCase+GHB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84C281F87314700687046 /* XCTestCase+GHB.swift */; };
 		5BDA45911F8AB71800DDDB7A /* NSArray+GHB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA45901F8AB71800DDDB7A /* NSArray+GHB.swift */; };
 		5BDA45931F8AB74700DDDB7A /* NSArray+GHBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA45921F8AB74700DDDB7A /* NSArray+GHBTests.swift */; };
+		5BDA459F1F8ABDE900DDDB7A /* RepoListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA459E1F8ABDE900DDDB7A /* RepoListCollectionViewCell.swift */; };
+		5BDA45A11F8ABE7B00DDDB7A /* RepoListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDA45A01F8ABE7B00DDDB7A /* RepoListCollectionViewCell.xib */; };
+		5BDA45A31F8B0DD900DDDB7A /* RepoListCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA45A21F8B0DD900DDDB7A /* RepoListCollectionViewCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		5BD84C281F87314700687046 /* XCTestCase+GHB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+GHB.swift"; sourceTree = "<group>"; };
 		5BDA45901F8AB71800DDDB7A /* NSArray+GHB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSArray+GHB.swift"; sourceTree = "<group>"; };
 		5BDA45921F8AB74700DDDB7A /* NSArray+GHBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSArray+GHBTests.swift"; sourceTree = "<group>"; };
+		5BDA459E1F8ABDE900DDDB7A /* RepoListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListCollectionViewCell.swift; sourceTree = "<group>"; };
+		5BDA45A01F8ABE7B00DDDB7A /* RepoListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoListCollectionViewCell.xib; sourceTree = "<group>"; };
+		5BDA45A21F8B0DD900DDDB7A /* RepoListCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListCollectionViewCellTests.swift; sourceTree = "<group>"; };
 		66BDABFBDDB6ADC881E36278 /* Pods_GitHubBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6947E29035D523649CB7AED0 /* Pods-GitHubBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD1C576A98778AD795FAEB14 /* Pods-GitHubBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowserTests/Pods-GitHubBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 			children = (
 				5BD84C1A1F872C5500687046 /* Service */,
 				5BD84C171F872C0100687046 /* Model */,
+				5BDA45941F8ABC0100DDDB7A /* View */,
 			);
 			path = Repos;
 			sourceTree = "<group>";
@@ -227,6 +234,24 @@
 				5BD84C241F872EE400687046 /* JSONInstantiable.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5BDA45941F8ABC0100DDDB7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BDA45951F8ABC1200DDDB7A /* List */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BDA45951F8ABC1200DDDB7A /* List */ = {
+			isa = PBXGroup;
+			children = (
+				5BDA459E1F8ABDE900DDDB7A /* RepoListCollectionViewCell.swift */,
+				5BDA45A01F8ABE7B00DDDB7A /* RepoListCollectionViewCell.xib */,
+				5BDA45A21F8B0DD900DDDB7A /* RepoListCollectionViewCellTests.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		673B18054D494AFF268CBF23 /* Pods */ = {
@@ -331,6 +356,7 @@
 			files = (
 				5BD84BEF1F871EC100687046 /* LaunchScreen.storyboard in Resources */,
 				5BD84BEC1F871EC100687046 /* Assets.xcassets in Resources */,
+				5BDA45A11F8ABE7B00DDDB7A /* RepoListCollectionViewCell.xib in Resources */,
 				5BD84BEA1F871EC100687046 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDA459F1F8ABDE900DDDB7A /* RepoListCollectionViewCell.swift in Sources */,
 				5BD84C071F871FE300687046 /* DefaultServer.swift in Sources */,
 				5BD84BE71F871EC100687046 /* ViewController.swift in Sources */,
 				5BD84C0B1F871FFA00687046 /* Server.swift in Sources */,
@@ -477,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BDA45931F8AB74700DDDB7A /* NSArray+GHBTests.swift in Sources */,
+				5BDA45A31F8B0DD900DDDB7A /* RepoListCollectionViewCellTests.swift in Sources */,
 				5BD84C271F87301800687046 /* GitHubRepoTests.swift in Sources */,
 				5BD84C141F872BB000687046 /* MockServer.swift in Sources */,
 				5BD84C291F87314700687046 /* XCTestCase+GHB.swift in Sources */,
