@@ -12,12 +12,10 @@ import Foundation
 
 class MockRepo: RepoDisplayable {
     
-    var name: String {
-        return "repo"
-    }
+    var name: String
     
     var fullName: String {
-        return "sample/repo"
+        return "sample/\(name)"
     }
     
     var description: String? {
@@ -38,5 +36,9 @@ class MockRepo: RepoDisplayable {
     
     var forksCount: Int {
         return 18
+    }
+    
+    init(name: String = "repo") {
+        self.name = name
     }
 }

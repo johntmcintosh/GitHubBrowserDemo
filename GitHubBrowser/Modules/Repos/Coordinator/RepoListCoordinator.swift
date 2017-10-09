@@ -16,8 +16,9 @@ import UIKit
 /// more straightforward, more data-driver, and more testable.
 class RepoListCoordinator {
     
-    fileprivate let navigationController: UINavigationController
-    fileprivate let repoService: GitHubRepoServicing
+    private let navigationController: UINavigationController
+    private let repoService: GitHubRepoServicing
+    private var repoList: [RepoDisplayable] = []
     
     lazy var listVC: RepoListViewController = {
         let vc = RepoListViewController()
@@ -47,6 +48,7 @@ class RepoListCoordinator {
             self.listVC.set(isRefreshing: false)
             switch result {
             case .success(let repos):
+                self.repoList = repos
                 self.listVC.set(repos: repos)
                 completion?()
             case .failure(let error):
@@ -62,6 +64,11 @@ extension RepoListCoordinator: RepoListViewControllerDelegate {
     
     func didTriggerRefresh(in viewController: RepoListViewController) {
         fetchRepoList()
+    }
+    
+    func didSearch(for term: String, in viewController: RepoListViewController) {
+        let searchResults = RepoListFilter().searchResults(for: term, in: repoList)
+        self.listVC.set(repos: searchResults)
     }
     
     func didSelect(repo: RepoDisplayable, in viewController: RepoListViewController) {

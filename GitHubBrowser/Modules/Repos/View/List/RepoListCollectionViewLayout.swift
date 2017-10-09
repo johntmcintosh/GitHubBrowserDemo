@@ -64,17 +64,15 @@ class RepoListCollectionViewLayout: UICollectionViewFlowLayout {
         var decorationAttributes: [UICollectionViewLayoutAttributes] = []
         for layoutAttributes in superLayoutAttributes {
             let indexPath = layoutAttributes.indexPath
-            if indexPath.item > 0 {
-                let cellFrame = layoutAttributes.frame
-                let separatorAttributes = CellSeparatorLayoutAttributes(forDecorationViewOfKind: RepoListCollectionViewLayout.viewKindSeparator, with: indexPath)
-                separatorAttributes.color = separatorColor
-                separatorAttributes.frame = CGRect(x: cellFrame.minX,
-                                                   y: cellFrame.minY - separatorHeight,
-                                                   width: cellFrame.width,
-                                                   height: separatorHeight)
-                separatorAttributes.zIndex = 1000
-                decorationAttributes.append(separatorAttributes)
-            }
+            let cellFrame = layoutAttributes.frame
+            let separatorAttributes = CellSeparatorLayoutAttributes(forDecorationViewOfKind: RepoListCollectionViewLayout.viewKindSeparator, with: indexPath)
+            separatorAttributes.color = separatorColor
+            separatorAttributes.frame = CGRect(x: cellFrame.minX,
+                                               y: cellFrame.minY - separatorHeight,
+                                               width: cellFrame.width,
+                                               height: separatorHeight)
+            separatorAttributes.zIndex = 1000
+            decorationAttributes.append(separatorAttributes)
         }
         
         return superLayoutAttributes + decorationAttributes

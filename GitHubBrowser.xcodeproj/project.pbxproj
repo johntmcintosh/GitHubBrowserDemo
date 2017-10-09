@@ -15,6 +15,8 @@
 		5B302D881F8B356900B6742C /* UIViewController+GHB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B302D871F8B356900B6742C /* UIViewController+GHB.swift */; };
 		5B302D8A1F8B387400B6742C /* RepoListCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B302D891F8B387400B6742C /* RepoListCoordinatorTests.swift */; };
 		5B302D8C1F8B398300B6742C /* MockRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B302D8B1F8B398300B6742C /* MockRepo.swift */; };
+		5B302D8E1F8BBE9100B6742C /* RepoListFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B302D8D1F8BBE9100B6742C /* RepoListFilter.swift */; };
+		5B302D901F8BC7A500B6742C /* RepoListFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B302D8F1F8BC7A500B6742C /* RepoListFilterTests.swift */; };
 		5B4E44A21F8B221F00953F91 /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E44A11F8B221F00953F91 /* RepoDetailViewController.swift */; };
 		5B4E44A41F8B222D00953F91 /* RepoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E44A31F8B222D00953F91 /* RepoDetailViewController.xib */; };
 		5B4E44A61F8B225700953F91 /* RepoDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E44A51F8B225700953F91 /* RepoDetailViewControllerTests.swift */; };
@@ -72,6 +74,8 @@
 		5B302D871F8B356900B6742C /* UIViewController+GHB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+GHB.swift"; sourceTree = "<group>"; };
 		5B302D891F8B387400B6742C /* RepoListCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListCoordinatorTests.swift; sourceTree = "<group>"; };
 		5B302D8B1F8B398300B6742C /* MockRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepo.swift; sourceTree = "<group>"; };
+		5B302D8D1F8BBE9100B6742C /* RepoListFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListFilter.swift; sourceTree = "<group>"; };
+		5B302D8F1F8BC7A500B6742C /* RepoListFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListFilterTests.swift; sourceTree = "<group>"; };
 		5B4E44A11F8B221F00953F91 /* RepoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
 		5B4E44A31F8B222D00953F91 /* RepoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoDetailViewController.xib; sourceTree = "<group>"; };
 		5B4E44A51F8B225700953F91 /* RepoDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewControllerTests.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 			children = (
 				5B302D851F8B2F8100B6742C /* RepoListCoordinator.swift */,
 				5B302D891F8B387400B6742C /* RepoListCoordinatorTests.swift */,
+				5B302D8D1F8BBE9100B6742C /* RepoListFilter.swift */,
+				5B302D8F1F8BC7A500B6742C /* RepoListFilterTests.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -570,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BDA459F1F8ABDE900DDDB7A /* RepoListCollectionViewCell.swift in Sources */,
+				5B302D8E1F8BBE9100B6742C /* RepoListFilter.swift in Sources */,
 				5BD84C071F871FE300687046 /* DefaultServer.swift in Sources */,
 				5BDA45A71F8B146D00DDDB7A /* RepoListCollectionViewLayout.swift in Sources */,
 				5BD84C0B1F871FFA00687046 /* Server.swift in Sources */,
@@ -612,6 +619,7 @@
 				5BD84C121F872B3E00687046 /* EndpointTests.swift in Sources */,
 				5BD84C1E1F872D5400687046 /* GitHubRepoServiceTests.swift in Sources */,
 				5BD84C0D1F87279300687046 /* MockURLProtocol.swift in Sources */,
+				5B302D901F8BC7A500B6742C /* RepoListFilterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

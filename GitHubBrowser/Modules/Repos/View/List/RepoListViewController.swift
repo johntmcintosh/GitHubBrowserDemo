@@ -12,6 +12,7 @@ import UIKit
 protocol RepoListViewControllerDelegate: class {
     
     func didTriggerRefresh(in viewController: RepoListViewController)
+    func didSearch(for term: String, in viewController: RepoListViewController)
     func didSelect(repo: RepoDisplayable, in viewController: RepoListViewController)
 }
 
@@ -22,6 +23,7 @@ class RepoListViewController: UIViewController {
     
     weak var delegate: RepoListViewControllerDelegate?
     private(set) var repos: [RepoDisplayable] = []
+    private var lastSearchTerm: String? = nil
 
     private static let repoCellIdentifier = "RepoListCell"
     private let stargazerFormatter = RepoCountFormatter(legend: "★")
@@ -48,6 +50,10 @@ class RepoListViewController: UIViewController {
         return refresh
     }()
 
+    lazy var searchController: UISearchController = {
+        return UISearchController(searchResultsController: nil)
+    }()
+
     
     // MARK: View Overrides
     
@@ -56,6 +62,7 @@ class RepoListViewController: UIViewController {
         
         navigationItem.title = NSLocalizedString("Square First 20 Repositories", comment: "")
         clearBackButtonTitle()
+        configureSearchController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -129,5 +136,33 @@ extension RepoListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let repo = repos[indexPath.row]
         delegate?.didSelect(repo: repo, in: self)
+    }
+}
+
+
+extension RepoListViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchTerm = searchController.searchBar.text ?? ""
+        
+        // This delegate can be triggered multiple times for the same search term by things like keyboard dismissal
+        // Track the last search term to prevent triggering the same search multiple times.
+        guard searchTerm != lastSearchTerm else {
+            return
+        }
+        lastSearchTerm = searchTerm
+        delegate?.didSearch(for: searchTerm, in: self)
+    }
+}
+
+
+private extension RepoListViewController {
+    
+    func configureSearchController() {
+        definesPresentationContext = true
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        navigationItem.searchController = searchController
     }
 }
