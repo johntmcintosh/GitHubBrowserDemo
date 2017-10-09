@@ -15,6 +15,7 @@ extension ViewConfig {
     /// Instance of ViewConfig that's standardized for consistency across screenshot tests.
     static func mock() -> ViewConfig {
         return ViewConfig(
+            animated: false,
             timeZone: TimeZone(abbreviation: "CDT")!,
             locale: Locale(identifier: "en_US"))
     }

@@ -24,7 +24,7 @@ class RepoListCoordinatorTests: XCTestCase {
         UIApplication.shared.keyWindow?.rootViewController = navigtionController
         
         repoService = MockRepoService()
-        coordinator = RepoListCoordinator(navigationController: navigtionController, repoService: repoService)
+        coordinator = RepoListCoordinator(navigationController: navigtionController, repoService: repoService, viewConfig: .mock())
         coordinator.start()
     }
     
@@ -64,6 +64,33 @@ class RepoListCoordinatorTests: XCTestCase {
         }
         waitForExpectations(timeout: 1.0)
     }
+    
+    
+    // MARK: List View Controller Delegate
+    
+    func testTriggerRefresh() {
+        coordinator.didTriggerRefresh(in: coordinator.listVC)
+        
+        XCTAssertTrue(repoService.fetchTriggered)
+    }
+    
+    func testDidSearch() {
+        coordinator.repoList = [
+            MockRepo(name: "apple"),
+            MockRepo(name: "banana"),
+        ]
+        coordinator.didSearch(for: "apple", in: coordinator.listVC)
+        let listRepos = coordinator.listVC.repos.map({ $0.name })
+        
+        XCTAssertEqual(listRepos, ["apple"])
+    }
+    
+    func testSelectRepo() {
+        coordinator.didSelect(repo: MockRepo(), in: coordinator.listVC)
+        
+        XCTAssertEqual(navigtionController.viewControllers.count, 2)
+        XCTAssertTrue(navigtionController.topViewController is RepoDetailViewController)
+    }
 }
 
 
@@ -90,4 +117,3 @@ private extension NSError {
         return NSError(domain: "com.flickrdemo.tests", code: 1, userInfo: userInfo)
     }
 }
-

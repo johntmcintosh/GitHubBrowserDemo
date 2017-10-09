@@ -12,6 +12,7 @@ import Foundation
 /// Simple struct for passing configuration into view objects while allowing for dependency injection in unit tests.
 struct ViewConfig {
     
+    var animated: Bool
     var timeZone: TimeZone
     var locale: Locale
 }
@@ -20,6 +21,6 @@ struct ViewConfig {
 extension ViewConfig {
     
     static func standard() -> ViewConfig {
-        return ViewConfig(timeZone: .current, locale: .current)
+        return ViewConfig(animated: true, timeZone: .current, locale: .current)
     }
 }

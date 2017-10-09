@@ -18,7 +18,8 @@ class RepoListCoordinator {
     
     private let navigationController: UINavigationController
     private let repoService: GitHubRepoServicing
-    private var repoList: [RepoDisplayable] = []
+    private let viewConfig: ViewConfig
+    var repoList: [RepoDisplayable] = []
     
     lazy var listVC: RepoListViewController = {
         let vc = RepoListViewController()
@@ -29,9 +30,10 @@ class RepoListCoordinator {
     
     // MARK: Initializer
     
-    init(navigationController: UINavigationController, repoService: GitHubRepoServicing = GitHubRepoService()) {
+    init(navigationController: UINavigationController, repoService: GitHubRepoServicing = GitHubRepoService(), viewConfig: ViewConfig = .standard()) {
         self.navigationController = navigationController
         self.repoService = repoService
+        self.viewConfig = viewConfig
     }
     
     
@@ -73,6 +75,6 @@ extension RepoListCoordinator: RepoListViewControllerDelegate {
     
     func didSelect(repo: RepoDisplayable, in viewController: RepoListViewController) {
         let vc = RepoDetailViewController(repo: repo)
-        navigationController.pushViewController(vc, animated: true)
+        navigationController.pushViewController(vc, animated: viewConfig.animated)
     }
 }
