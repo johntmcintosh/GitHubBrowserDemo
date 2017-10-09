@@ -9,19 +9,26 @@
 import Foundation
 
 
-struct RepoCountFormatter {
+class RepoCountFormatter {
     
+    let viewConfig: ViewConfig
     var legend: String
     
-    private static var formatter: NumberFormatter = {
+    init(legend: String, viewConfig: ViewConfig = .standard()) {
+        self.legend = legend
+        self.viewConfig = viewConfig
+    }
+    
+    private lazy var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
+        formatter.locale = self.viewConfig.locale
         formatter.numberStyle = .decimal
         return formatter
     }()
     
     /// Return a view-formatted string for displaying the count of a metric
     func string(for count: Int) -> String? {
-        guard let numericString = RepoCountFormatter.formatter.string(from: NSNumber(value: count)) else {
+        guard let numericString = formatter.string(from: NSNumber(value: count)) else {
             return nil
         }
         return "\(numericString) \(legend)"

@@ -36,25 +36,50 @@ class RepoDetailViewController: UIViewController {
             descriptionLabel.text = repo.description
         }
     }
-    
+
+    @IBOutlet weak var createdLabel: UILabel! {
+        didSet {
+            let date = dateFormatter.string(from: repo.createdDate)
+            createdLabel.text = String(format: NSLocalizedString("Created: %@", comment: ""), date)
+        }
+    }
+
+    @IBOutlet weak var updatedLabel: UILabel! {
+        didSet {
+            let date = dateFormatter.string(from: repo.updatedDate)
+            updatedLabel.text = String(format: NSLocalizedString("Last updated: %@", comment: ""), date)
+        }
+    }
+
     
     // MARK: Properties
     
     let repo: RepoDisplayable
+    let viewConfig: ViewConfig
     
     private lazy var watchersFormatter: RepoCountFormatter = {
-        return RepoCountFormatter(legend: "👀")
+        return RepoCountFormatter(legend: "👀", viewConfig: self.viewConfig)
     }()
     
     private lazy var stargazersFormatter: RepoCountFormatter = {
-        return RepoCountFormatter(legend: "⭐")
+        return RepoCountFormatter(legend: "⭐", viewConfig: self.viewConfig)
+    }()
+    
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = self.viewConfig.locale
+        formatter.timeZone = self.viewConfig.timeZone
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
     }()
 
     
     // MARK: Initializers
     
-    init(repo: RepoDisplayable) {
+    init(repo: RepoDisplayable, viewConfig: ViewConfig = .standard()) {
         self.repo = repo
+        self.viewConfig = viewConfig
         super.init(nibName: nil, bundle: nil)
     }
     

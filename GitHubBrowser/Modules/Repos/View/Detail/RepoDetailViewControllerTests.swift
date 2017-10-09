@@ -19,7 +19,7 @@ class RepoDetailViewControllerTests: SnapshotKitTestCase {
     }
     
     func testBasicView() {
-        let vc = RepoDetailViewController(repo: MockRepo())
+        let vc = RepoDetailViewController(repo: MockRepo(), viewConfig: .mock())
         snapshot.fixed(size: iPhoneDeviceSize.iPhone6.resolution).verify(vc)
     }
 }
@@ -40,6 +40,10 @@ private class MockRepo: RepoDisplayable {
     }
     
     var createdDate: Date {
+        return Date(timeIntervalSince1970: 0)
+    }
+    
+    var updatedDate: Date {
         return Date(timeIntervalSince1970: 0)
     }
     

@@ -53,6 +53,10 @@ private class MockRepo: RepoDisplayable {
         return Date(timeIntervalSince1970: 0)
     }
     
+    var updatedDate: Date {
+        return Date(timeIntervalSince1970: 0)
+    }
+    
     var stargazersCount: Int {
         return 120
     }

@@ -23,6 +23,7 @@ class GitHubRepoTests: XCTestCase {
         XCTAssertEqual(repo.fullName, "square/html5")
         XCTAssertEqual(repo.description, "A Rails plugin for playing around with HTML5.")
         XCTAssertEqual(repo.createdDate, dateFormatter.date(from: "2009-06-18T23:22:44Z"))
+        XCTAssertEqual(repo.updatedDate, dateFormatter.date(from: "2016-04-30T14:29:45Z"))
         XCTAssertEqual(repo.stargazersCount, 8)
         XCTAssertEqual(repo.watchersCount, 7)
     }

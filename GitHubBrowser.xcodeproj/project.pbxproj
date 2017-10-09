@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3251AFB7A7CA6511BB6A98E2 /* Pods_GitHubBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BDABFBDDB6ADC881E36278 /* Pods_GitHubBrowserTests.framework */; };
 		438B87A589F704AC93291B24 /* Pods_GitHubBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D8D3ED9C5946E6449C3A14 /* Pods_GitHubBrowser.framework */; };
+		5B302D811F8B2DD200B6742C /* ViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B302D801F8B2DD200B6742C /* ViewConfig.swift */; };
+		5B302D831F8B2E0100B6742C /* ViewConfig+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B302D821F8B2E0100B6742C /* ViewConfig+Tests.swift */; };
 		5B4E44A21F8B221F00953F91 /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E44A11F8B221F00953F91 /* RepoDetailViewController.swift */; };
 		5B4E44A41F8B222D00953F91 /* RepoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4E44A31F8B222D00953F91 /* RepoDetailViewController.xib */; };
 		5B4E44A61F8B225700953F91 /* RepoDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E44A51F8B225700953F91 /* RepoDetailViewControllerTests.swift */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		1A7099D33D707BF333E2C464 /* Pods-GitHubBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser.release.xcconfig"; sourceTree = "<group>"; };
 		31D8D3ED9C5946E6449C3A14 /* Pods_GitHubBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B302D801F8B2DD200B6742C /* ViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfig.swift; sourceTree = "<group>"; };
+		5B302D821F8B2E0100B6742C /* ViewConfig+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewConfig+Tests.swift"; sourceTree = "<group>"; };
 		5B4E44A11F8B221F00953F91 /* RepoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
 		5B4E44A31F8B222D00953F91 /* RepoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoDetailViewController.xib; sourceTree = "<group>"; };
 		5B4E44A51F8B225700953F91 /* RepoDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewControllerTests.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 				5BD84C0C1F87279300687046 /* MockURLProtocol.swift */,
 				5BD84C131F872BB000687046 /* MockServer.swift */,
 				5BD84C281F87314700687046 /* XCTestCase+GHB.swift */,
+				5B302D821F8B2E0100B6742C /* ViewConfig+Tests.swift */,
 			);
 			path = GitHubBrowserTests;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD84C241F872EE400687046 /* JSONInstantiable.swift */,
+				5B302D801F8B2DD200B6742C /* ViewConfig.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -566,6 +572,7 @@
 				5BDA45911F8AB71800DDDB7A /* NSArray+GHB.swift in Sources */,
 				5BDA45AA1F8B169900DDDB7A /* CollectionViewCellSeparator.swift in Sources */,
 				5B7448F51F8B1EF200938143 /* RepoCountFormatter.swift in Sources */,
+				5B302D811F8B2DD200B6742C /* ViewConfig.swift in Sources */,
 				5BD84BE51F871EC100687046 /* AppDelegate.swift in Sources */,
 				5BD84C1C1F872C7F00687046 /* GitHubRepoService.swift in Sources */,
 				5BD84C101F8729B200687046 /* Endpoint.swift in Sources */,
@@ -584,6 +591,7 @@
 				5BD84C141F872BB000687046 /* MockServer.swift in Sources */,
 				5BDA45A51F8B110300DDDB7A /* RepoListViewControllerTests.swift in Sources */,
 				5BD84C291F87314700687046 /* XCTestCase+GHB.swift in Sources */,
+				5B302D831F8B2E0100B6742C /* ViewConfig+Tests.swift in Sources */,
 				5BD84C091F871FEC00687046 /* DefaultServerTests.swift in Sources */,
 				5BD84C121F872B3E00687046 /* EndpointTests.swift in Sources */,
 				5BD84C1E1F872D5400687046 /* GitHubRepoServiceTests.swift in Sources */,
